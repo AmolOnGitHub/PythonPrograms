@@ -16,7 +16,7 @@ def findpi(n):
         i += 1
     return 4 * inside / n
 
-i = 10000
+i = 1
 pival = []
 while i > 0:
     pival.append(findpi(100000))
