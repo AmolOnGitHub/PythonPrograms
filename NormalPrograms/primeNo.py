@@ -8,6 +8,8 @@ while x <= n:
         if x % prime == 0:
             isDiv = True
             break
+        elif prime * prime > x:
+            break
     if not isDiv:
         primes.append(x)
         
