@@ -1,23 +1,5 @@
 import math
-
-def alpha(students, no):
-    outer = 1
-    i = 0
-    length = len(students)
-    orino = no
-    while outer <= math.ceil(length / orino):
-        while i < no:
-            name = students[i]
-            name = name[0: len(name) - 4]
-            print(name)
-            i += 1
-        no += orino
-        if(no > len(students)):
-            no = len(students)
-        outer += 1
-        print()
-
-
+    
 students = [
 "HAFIZAA ALVEENAA B - G",
 "MARY ANNE AMITHA - G",
@@ -56,6 +38,43 @@ students = [
 "JAISHREE V P - G" 
 ]
 
-#print("Strength:" ,len(students))
+print("Strength:" ,len(students))
+
 students.sort()
-alpha(students, 17)
+
+print("How would you like to sort:")
+print("Alphabetical or Roll Number")
+choice = input().strip().lower()
+print("How many students in each batch? (15 - 18)")
+no = int(input())
+
+if not (choice == "roll number" or choice == "alphabetical"): 
+    quit()
+if not (no >= 15 and no <= 18):
+    quit()
+
+if(choice == "roll number"):
+    girls = []
+    boys = []
+    for name in students:
+        if " - G" in name:
+            girls.append(name)
+        if " - B" in name:
+            boys.append(name)
+
+    students = girls + boys
+
+outer = 1
+length = len(students)
+while outer <= math.ceil(length / no):
+    i = 0
+    while i < no:
+        name = students[0]
+        name = name[0: len(name) - 4]
+        print(name)
+        i += 1
+        students.pop(0)
+        if(len(students) == 0):
+            break
+    outer += 1
+    print()
