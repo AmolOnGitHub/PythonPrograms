@@ -2,16 +2,18 @@ import math
 
 def alpha(students, no):
     outer = 1
-    while outer <= math.ceil(len(students) / no):
-        i = 0
+    i = 0
+    length = len(students)
+    orino = no
+    while outer <= math.ceil(length / orino):
         while i < no:
-            name = students[0]
+            name = students[i]
             name = name[0: len(name) - 4]
             print(name)
             i += 1
-            students.pop(0)
-            if(len(students) == 0):
-                break
+        no += orino
+        if(no > len(students)):
+            no = len(students)
         outer += 1
         print()
 
