@@ -1,4 +1,10 @@
-import random
+arr = [1, 2, 3, 4, 5, 6]
+k = 3
+n = len(arr)
 
-for _ in range(100):
-    print(random.randint(1000000000, 9999999999))
+temp = []
+for x in range(n):
+    ind = (x - k) % n
+    temp.append(arr[ind])
+
+print(temp)
