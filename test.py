@@ -1,10 +1,16 @@
-arr = [1, 2, 3, 4, 5, 6]
-k = 3
-n = len(arr)
+from itertools import combinations
 
-temp = []
-for x in range(n):
-    ind = (x - k) % n
-    temp.append(arr[ind])
+enchants = ["Mending", "Unbreaking", "Fire Aspect", "Looting", "Knockback II", "Sweeping Edge", "Sharpness", "Smite", "Bane of Arthropods"]
+banned = ["Sharpness", "Smite", "Bane of Arthropods"]
+enchantComb = list(combinations(enchants, 3))
+i = 0
+while i < len(enchantComb):
+    count = 0
+    comb = enchantComb[i]
+    for ban in banned:
+        count += comb.count(ban)
+    
+    if count >= 2:
+        enchantComb.remove(comb)
+    else: i += 1
 
-print(temp)
