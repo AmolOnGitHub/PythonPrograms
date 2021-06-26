@@ -12,4 +12,3 @@ def request_counter():
         print("Slowing down...")
         time.sleep(60)
         amount = 0
-
