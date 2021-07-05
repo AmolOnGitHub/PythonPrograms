@@ -20,10 +20,9 @@ xP = []
 yP = []
 
 for i in range(1000000):
-    if is_prime(i):
-        x, y = toCart(i, i)
-        xP.append(x)
-        yP.append(y)
+    x, y = toCart(i, i)
+    xP.append(x)
+    yP.append(y)
 
 plt.plot(xP, yP, ".")
 plt.show()

@@ -1,8 +1,9 @@
 import pyautogui
 import time
 
-time.sleep(5)
-file = open("shrekscript", 'r')
+time.sleep(2)
+file = open("OtherPrograms/TypingShrek/shrekscript", 'r').read().split(" ")
 for word in file:
+    time.sleep(1)
     pyautogui.typewrite(word)
     pyautogui.press("enter")
