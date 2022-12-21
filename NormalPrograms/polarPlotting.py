@@ -19,7 +19,9 @@ def toCart(r, theta):
 xP = []
 yP = []
 
-for i in range(1000000):
+for i in range(10000):
+    if not is_prime(i):
+        continue
     x, y = toCart(i, i)
     xP.append(x)
     yP.append(y)

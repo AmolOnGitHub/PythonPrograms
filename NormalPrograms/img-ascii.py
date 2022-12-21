@@ -72,3 +72,6 @@ for no in pixelValues:
     if counter == image.size[0]:
         textFile.write("\n")
         counter = 0
+        #
+    #
+#
