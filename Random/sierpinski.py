@@ -4,7 +4,7 @@ import random
 import numpy as np
 from sympy import symbols, Eq, solve
 
-SIDES = 3 # SET NUMBER OF SIDES
+SIDES = 23 # SET NUMBER OF SIDES
 AREA = 1000
 ITERATIONS = 1000000 # NUMBER OF ITERATIONS
 SLEN = math.sqrt((AREA * 4 * math.tan(math.pi/SIDES)) / SIDES)
@@ -73,7 +73,7 @@ randypts = [pt[1] for pt in rand_pts]
 print("calculated")
 
 plt.figure(figsize=(WINDOWSIZE, WINDOWSIZE))
-plt.plot(xpts, ypts, 'ro')
+plt.plot(xpts + [0], ypts + [0], 'o:r')
 # plt.plot([randpt[0]], [randpt[1]], 'bo')  ORIGINAL POINT
 plt.plot(randxpts, randypts, 'ro', ms = 1)
 
