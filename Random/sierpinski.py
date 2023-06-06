@@ -4,7 +4,7 @@ import random
 import numpy as np
 from sympy import symbols, Eq, solve
 
-SIDES = 23 # SET NUMBER OF SIDES
+SIDES = 3 # SET NUMBER OF SIDES
 AREA = 1000
 ITERATIONS = 1000000 # NUMBER OF ITERATIONS
 SLEN = math.sqrt((AREA * 4 * math.tan(math.pi/SIDES)) / SIDES)

@@ -1,14 +1,8 @@
-from datetime import datetime 
+def ma(x):
+    return x * x / (2 * x - 1)
 
-d1 = datetime.now()
-d2 = datetime.strptime("24/01/2023", "%d/%m/%Y")
-d3 = datetime.strptime("03/01/2023", "%d/%m/%Y")
-d4 = datetime.strptime("01/02/2023", "%d/%m/%Y")
-
-delta1 = d2 - d1
-delta2 = d3 - d1
-delta3 = d4 - d1
-
-print(f"mains: {delta1.days} days left")
-print(f"pre2: {delta2.days} days left")
-print(f"board: {delta3.days} days left")
+x = 2
+#while ma(x) != int(ma(x)):
+for x in range(2, 100):
+    print(ma(x))
+    x += 1

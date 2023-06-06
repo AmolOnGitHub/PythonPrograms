@@ -1,28 +1,22 @@
-import java.time.*;
-import java.util.Scanner;
-
-class date90 {
-    static String printDate(LocalDate d) {
-        String s = d.getDayOfMonth() + "/";
-        s += d.getMonthValue() + "/";
-        s += d.getYear();
-        return s;
-    }
+class test {
     public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
+        int[] x = {5, 3, 4, 1, 2};
 
-        System.out.println("Enter the date: (DD/MM/YYYY)");
-        String input = s.next();
-        String[] dmy = input.split("/");
+        for(int i = 1; i < x.length; i++) {
+            int val = x[i];
+            int j = i - 1;
 
-        int year = Integer.parseInt(dmy[2]);
-        int month = Integer.parseInt(dmy[1]);
-        int day = Integer.parseInt(dmy[0]);
+            while (j >= 0 && x[j] > val) {
+                x[j + 1] = x[j];
+                j--;
+            }
 
-        LocalDate ld = LocalDate.of(year, month, day);
-        LocalDate delta = ld.plusDays(90);
-
-        System.out.println("Original Date: " + printDate(ld) + " " + ld.getDayOfWeek());
-        System.out.println("New Date: " + printDate(delta) + " " + delta.getDayOfWeek());        
+            x[j + 1] = val;
+            
+            for(int e : x) {
+                System.out.print(e + " ");
+            }
+            System.out.println();
+        }
     }
 }
